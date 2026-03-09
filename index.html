@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 창업 지원 투트랙 전략 로드맵</title>
+    <title>예비창업패키지 & 모두의 창업 마일스톤</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {'packages':['timeline']});
@@ -19,27 +19,34 @@
             dataTable.addColumn({ type: 'date', id: 'Start' });
             dataTable.addColumn({ type: 'date', id: 'End' });
 
-            // 자바스크립트에서 월(Month)은 0부터 시작함 (예: 2 = 3월, 4 = 5월)
+            // 자바스크립트에서 월(Month)은 0부터 시작함 (예: 2 = 3월, 4 = 5월, 0 = 내년 1월)
             dataTable.addRows([
-                [ '예비창업패키지', '서류 접수 (3/6~3/24)', new Date(2026, 2, 6), new Date(2026, 2, 24) ],
-                [ '예비창업패키지', '사전 인큐베이팅 및 평가', new Date(2026, 3, 1), new Date(2026, 4, 30) ],
-                [ '예비창업패키지', '최종 선정 및 확약서 제출', new Date(2026, 4, 25), new Date(2026, 5, 5) ],
-                
-                [ '모두의 창업', '세부 공고 및 투트랙 추가 지원', new Date(2026, 2, 25), new Date(2026, 3, 15) ],
-                [ '모두의 창업', '서류 및 오디션 경연', new Date(2026, 4, 1), new Date(2026, 5, 30) ],
-                
-                [ '웹 서비스 개발', '사용자 고민 분석 UI/UX 기획', new Date(2026, 2, 10), new Date(2026, 3, 30) ],
-                [ '웹 서비스 개발', '1단계 개발 (핵심 명언 매칭 기능)', new Date(2026, 5, 5), new Date(2026, 8, 30) ],
-                [ '웹 서비스 개발', '2단계 고도화 및 시장 반응 검증', new Date(2026, 9, 1), new Date(2027, 0, 31) ],
-                
-                [ '마일스톤', '대표자 명의 사업자 등록 의무', new Date(2026, 10, 1), new Date(2026, 10, 30) ],
-                [ '마일스톤', '1단계 최종 보고 및 정산', new Date(2027, 0, 15), new Date(2027, 0, 31) ]
+                // 🔵 예비창업패키지 타임라인
+                [ '예비창업패키지', '서류 접수 (3/24 마감)', new Date(2026, 2, 6), new Date(2026, 2, 24) ],
+                [ '예비창업패키지', '서류 평가 진행 및 대상자 확정', new Date(2026, 2, 25), new Date(2026, 2, 31) ],
+                [ '예비창업패키지', '사전 인큐베이팅', new Date(2026, 3, 1), new Date(2026, 3, 30) ],
+                [ '예비창업패키지', '발표(대면) 평가', new Date(2026, 4, 1), new Date(2026, 4, 25) ],
+                [ '예비창업패키지', '1단계 최종 선정 통보', new Date(2026, 4, 26), new Date(2026, 5, 5) ],
+                [ '예비창업패키지', '1단계 사업 수행', new Date(2026, 5, 6), new Date(2027, 0, 31) ],
+                [ '예비창업패키지', '2단계 진척도 평가', new Date(2026, 8, 1), new Date(2026, 8, 30) ], // 협약 중간 임의 시점
+                [ '예비창업패키지', '대표자 명의 사업자 등록', new Date(2026, 10, 1), new Date(2026, 10, 30) ],
+                [ '예비창업패키지', '최종 보고 및 점검', new Date(2027, 0, 1), new Date(2027, 0, 31) ],
+
+                // 🟢 모두의 창업 타임라인
+                [ '모두의 창업', '세부 모집 공고 정식 오픈', new Date(2026, 2, 25), new Date(2026, 2, 31) ],
+                [ '모두의 창업', '1차 서류/아이디어 심사', new Date(2026, 3, 1), new Date(2026, 3, 30) ],
+                [ '모두의 창업', '1차 선발 및 오디션 시작', new Date(2026, 4, 1), new Date(2026, 4, 25) ],
+                [ '모두의 창업', '2차 오디션/경연 라운드', new Date(2026, 4, 26), new Date(2026, 5, 5) ],
+                [ '모두의 창업', '경연 서바이벌 지속', new Date(2026, 5, 6), new Date(2026, 9, 31) ],
+                [ '모두의 창업', '최종 우승자 선발', new Date(2026, 10, 1), new Date(2026, 10, 30) ],
+                [ '모두의 창업', '프로젝트 종료', new Date(2027, 0, 1), new Date(2027, 0, 31) ]
             ]);
 
             var options = {
-                timeline: { showRowLabels: true, colorByRowLabel: true },
+                timeline: { showRowLabels: true, colorByRowLabel: false },
                 hAxis: { format: '2026.MM' },
-                backgroundColor: '#f8f9fa'
+                backgroundColor: '#f8f9fa',
+                colors: ['#4285F4', '#34A853'] // 파란색(예창패), 초록색(모두의창업)
             };
 
             chart.draw(dataTable, options);
@@ -76,8 +83,8 @@
 </head>
 <body>
     <div class="header">
-        <h1>🚀 2026 투트랙 창업 지원 및 서비스 런칭 마일스톤</h1>
-        <p>예비창업패키지 & 모두의 창업 프로젝트 동시 진행 로드맵</p>
+        <h1>📊 예비창업패키지 & 모두의 창업 마일스톤</h1>
+        <p>2026년 창업 지원사업 동시 지원 타임라인</p>
     </div>
     <div id="timeline-chart"></div>
 </body>
